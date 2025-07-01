@@ -1,0 +1,38 @@
+CartCraze: E-Commerce App
+
+- An e-commerce platform for browsing products, managing orders, and processing payments.
+
+- Tech Stack:
+	- Frontend: Next.js (TypeScript)
+	- Backend: Apollo Server (GraphQL)
+	- Database: PostgreSQL (AWS RDS)
+	- ORM: Prisma
+	- Auth: OAuth (Google/GitHub)
+	- Infrastructure: Terraform (AWS)
+	- CI/CD: GitHub Actions → AWS ECS/Lambda
+	- Containerization: Docker
+	- Monitoring: AWS CloudWatch
+
+- Features:
+	CRUD operations for products, orders, and users.
+	GraphQL API for flexible data querying.
+	Payment integration (optional, if time permits).
+
+- Testing: Unit testing with Jest.
+
+- DevOps: 
+	CI/CD pipeline (GitHub Actions)
+	Infrastructure as Code (Terraform)
+		- ECS Cluster (or Lambda if serverless).
+		- RDS PostgreSQL (for DB).
+		- ECR (Docker image storage).
+		- VPC, Security Groups, IAM Roles (least privilege).
+	- Containerization with Docker.
+	Monitoring (AWS CloudWatch)
+
+- Deployment: AWS Lambda (serverless) or ECS (containers).
+
+- Project Management: Agile workflow using GitHub Projects.
+
+- Certifications if possible: 
+	AWS Certified Solutions Architect – Associate (Covers ECS, Lambda, RDS).
