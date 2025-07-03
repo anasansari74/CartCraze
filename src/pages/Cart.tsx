@@ -1,4 +1,4 @@
-export function Cart(){
+export default function Cart(){
     return(
         <div className="pt-16">
             <p>Cart</p>
