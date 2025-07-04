@@ -5,10 +5,8 @@ export default function Login() {
 
   return (
     <div className="grid grid-rows-[auto_1fr] min-h-screen">
-      {/* Header spacer */}
       <div className="row-start-1 h-16"></div>
       
-      {/* Main content */}
       <div className="row-start-2 flex items-center justify-center bg-gray-50 p-4">
         <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-xl shadow-md">
           <div className="text-center">
