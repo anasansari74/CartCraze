@@ -14,16 +14,17 @@ interface AuthState {
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
-  user: typeof window !== 'undefined' 
-    ? JSON.parse(localStorage.getItem('user') || 'null') 
-    : null,
-
+  user: null,
   login: (email) => {
-    const user = { id: crypto.randomUUID(), email };
-    localStorage.setItem('user', JSON.stringify(user));
+    const user = { 
+      id: email.includes('fake') ? 'fake-user-id' : crypto.randomUUID(),
+      email 
+    };
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('user', JSON.stringify(user));
+    }
     set({ user });
   },
-
   logout: () => {
     localStorage.removeItem('user');
     set({ user: null });

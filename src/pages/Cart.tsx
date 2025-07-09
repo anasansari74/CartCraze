@@ -113,7 +113,6 @@ export default function Cart() {
         </div>
       </div>
 
-      {/* Checkout Modal */}
       {showCheckout && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg max-w-md w-full relative">
@@ -130,7 +129,7 @@ export default function Cart() {
             
             <form onSubmit={async (e) => {
               e.preventDefault();
-              const formData = new FormData(e.currentTarget);
+              const formData = new FormData(e.currentTarget as HTMLFormElement);
               
               if (!formData.get('cardNumber') || !formData.get('expiryDate') || !formData.get('cvv')) {
                 toast.error("Please fill all fields");
@@ -144,7 +143,63 @@ export default function Cart() {
               setShowCheckout(false);
               toast.success("Payment successful!");
             }}>
-              {/* ... (keep existing payment form fields) ... */}
+              <div className="space-y-4">
+                {/* Card Number */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                  <input
+                    name="cardNumber"
+                    type="text"
+                    placeholder="1234 5678 9012 3456"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    required
+                  />
+                </div>
+
+                {/* Expiry and CVV */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+                    <input
+                      name="expiryDate"
+                      type="text"
+                      placeholder="MM/YY"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                    <input
+                      name="cvv"
+                      type="text"
+                      placeholder="123"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Name on Card */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Name on Card</label>
+                  <input
+                    name="cardName"
+                    type="text"
+                    placeholder="John Doe"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    required
+                  />
+                </div>
+
+                {/* Pay Button */}
+                <button
+                  type="submit"
+                  className="w-full mt-4 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"
+                >
+                  Pay ${subtotal.toFixed(2)}
+                </button>
+              </div>
             </form>
           </div>
         </div>

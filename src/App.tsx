@@ -9,6 +9,7 @@ import  Header  from './components/Header';
 import  Cart   from './pages/Cart'
 import  Home  from './pages/Home'
 import  Login  from './pages/Login'
+import DevFooter from './components/DevFooter';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             />
           </Routes>
         </main>
+        <DevFooter />
         <ToastContainer />
       </div>
     </BrowserRouter>
