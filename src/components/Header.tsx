@@ -6,7 +6,6 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white z-50">
-      {/* Changed container width to match your content */}
       <div className="max-w-7xl mx-auto w-full flex justify-between items-center p-4 border-b border-gray-200">
         <Link to="/" className="flex items-center gap-2">
           <h1 className="text-xl font-bold">CartCraze</h1>
@@ -17,6 +16,12 @@ export default function Header() {
             <>
               <Link to="/cart" className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                 Cart
+              </Link>
+              <Link 
+                to="/orders" 
+                className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600"
+              >
+                Orders
               </Link>
               <button
                 onClick={logout}

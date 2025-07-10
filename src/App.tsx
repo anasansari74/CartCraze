@@ -10,6 +10,7 @@ import  Cart   from './pages/Cart'
 import  Home  from './pages/Home'
 import  Login  from './pages/Login'
 import DevFooter from './components/DevFooter';
+import Orders from './pages/Orders';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
     <BrowserRouter>
       <div className="grid grid-rows-[auto_1fr] min-h-screen">
         <Header />
-        <main className="row-start-2"> {/* Starts immediately after header */}
+        <main className="row-start-2"> 
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Home />} />
@@ -27,6 +28,9 @@ function App() {
               path="/cart" 
               element={user ? <Cart /> : <Navigate to="/login" replace />} 
             />
+            <Route path="/orders" element={
+              user ? <Orders /> : <Navigate to="/login" replace />
+            } />
           </Routes>
         </main>
         <DevFooter />

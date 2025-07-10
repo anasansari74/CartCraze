@@ -4,14 +4,6 @@ import { useCartStore } from '../store/cartStore';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function CreditCardIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...props} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 3v2h16V7H4zm0 4v2h16v-2H4z"/>
-    </svg>
-  );
-}
-
 export default function Cart() {
   const { cart, removeItem, updateQuantity, clearCart } = useCartStore();
   const [showCheckout, setShowCheckout] = useState(false);
@@ -25,7 +17,6 @@ export default function Cart() {
         <h1 className="text-2xl font-bold mb-6">Your Cart</h1>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Items Column */}
           <div className="lg:col-span-2 space-y-4">
             {cart.length === 0 ? (
               <div className="text-center py-12 border rounded-lg">
@@ -78,7 +69,6 @@ export default function Cart() {
             )}
           </div>
 
-          {/* Order Summary */}
           <div className="border p-6 rounded-lg h-fit">
             <h2 className="text-xl font-bold mb-4">Order Summary</h2>
             <div className="space-y-3">
@@ -144,7 +134,6 @@ export default function Cart() {
               toast.success("Payment successful!");
             }}>
               <div className="space-y-4">
-                {/* Card Number */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
                   <input
@@ -156,7 +145,6 @@ export default function Cart() {
                   />
                 </div>
 
-                {/* Expiry and CVV */}
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
@@ -180,7 +168,6 @@ export default function Cart() {
                   </div>
                 </div>
 
-                {/* Name on Card */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Name on Card</label>
                   <input
@@ -192,7 +179,6 @@ export default function Cart() {
                   />
                 </div>
 
-                {/* Pay Button */}
                 <button
                   type="submit"
                   className="w-full mt-4 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"

@@ -1,4 +1,3 @@
-// src/store/authStore.ts
 import { create } from 'zustand';
 
 interface AuthState {
@@ -20,9 +19,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       id: email.includes('fake') ? 'fake-user-id' : crypto.randomUUID(),
       email 
     };
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('user', JSON.stringify(user));
-    }
+    localStorage.setItem('user', JSON.stringify(user));
     set({ user });
   },
   logout: () => {

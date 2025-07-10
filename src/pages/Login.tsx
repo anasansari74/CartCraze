@@ -27,7 +27,6 @@ export default function Login() {
       
       <div className="row-start-2 flex items-center justify-center bg-gray-50 p-4">
         <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-xl shadow-md">
-          {/* RESTORED WELCOME MESSAGE */}
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900">
               {isSignUp ? 'Create Account' : 'Welcome Back'}
