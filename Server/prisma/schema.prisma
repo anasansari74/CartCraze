@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"  // Or your DB (sqlite/mysql)
+  provider = "postgresql"  
   url      = env("DATABASE_URL")
 }
 
@@ -18,9 +18,11 @@ model User {
 
 model Product {
   id          String   @id @default(uuid())
-  name        String
+  name       String
   price       Float
   description String?
+  category    String
+  image       String
   createdAt   DateTime @default(now())
   orders      Order[]
 }
