@@ -26,7 +26,7 @@ export default function Home() {
   const fetchProducts = async (category: Category) => {
     setIsLoading(true);
     try {
-      const res = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+      const res = await fetch(`http://localhost:3000/api/products/${category}`);
       setProducts(await res.json());
     } catch (error) {
       console.error("Failed to fetch products:", error);

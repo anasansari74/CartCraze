@@ -9,7 +9,7 @@ export default function Login() {
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget as HTMLFormElement);
+    const formData = new FormData(e.currentTarget as HTMLFormElement); 
     const email = formData.get('email') as string;
     
     if (!email) {
